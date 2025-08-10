@@ -1,15 +1,19 @@
-/* eslint-env jest */
-import { isPrime, reverseString } from "./math.js";
+// math.js
 
-test("isPrime identifica correctamente números primos", () => {
-  expect(isPrime(2)).toBe(true);
-  expect(isPrime(7)).toBe(true);
-  expect(isPrime(9)).toBe(false);
-  expect(isPrime(1)).toBe(false);
-});
+function isPrime(n) {
+  if (n <= 1) {
+    return false;
+  }
+  for (let i = 2; i <= Math.sqrt(n); i++) {
+    if (n % i === 0) {
+      return false;
+    }
+  }
+  return true;
+}
 
-test("reverseString invierte correctamente cadenas", () => {
-  expect(reverseString("hola")).toBe("aloh");
-  expect(reverseString("abc")).toBe("cba");
-  expect(reverseString("")).toBe("");
-});
+function reverseString(str) {
+  return str.split("").reverse().join("");
+}
+
+module.exports = { isPrime, reverseString };
