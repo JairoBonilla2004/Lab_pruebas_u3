@@ -1,6 +1,6 @@
 // math.js
 
-export function isPrime(n) {
+function isPrime(n) {
   if (n <= 1) {
     return false;
   }
@@ -12,6 +12,8 @@ export function isPrime(n) {
   return true;
 }
 
-export function reverseString(str) {
+function reverseString(str) {
   return str.split("").reverse().join("");
 }
+
+module.exports = { isPrime, reverseString };
