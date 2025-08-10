@@ -1,43 +1,26 @@
+import globals from "globals";
+import pluginJs from "@eslint/js";
+
 export default [
-    {
-        files: ['**/*.js', '**/*.mjs'],
-        languageOptions: {
-            ecmaVersion: 2022,
-            sourceType: 'module',
-            globals: {
-                console: 'readonly',
-                process: 'readonly',
-                require: 'readonly',
-                module: 'readonly',
-                exports: 'readonly',
-                __dirname: 'readonly',
-                __filename: 'readonly'
-            }
-        },
-        rules: {
-            'no-unused-vars': 'warn',
-            'no-console': 'off',
-            'semi': ['error', 'always'],
-            'quotes': ['error', 'single']
-        }
+  {
+    languageOptions: {
+      ecmaVersion: "latest",
+      sourceType: "module",
+      globals: {
+        ...globals.node
+      }
     },
-    {
-        files: ['**/*.test.js', '**/*.spec.js'],
-        languageOptions: {
-            globals: {
-                test: 'readonly',
-                expect: 'readonly',
-                describe: 'readonly',
-                it: 'readonly',
-                beforeEach: 'readonly',
-                afterEach: 'readonly',
-                beforeAll: 'readonly',
-                afterAll: 'readonly',
-                jest: 'readonly'
-            }
-        },
-        rules: {
-            'no-unused-vars': 'off'
-        }
+    plugins: {},
+    rules: {
+      "no-unused-vars": "warn",          
+      "no-undef": "error",               
+      "eqeqeq": ["error", "always"],     
+      "semi": ["error", "always"],       
+      "quotes": ["error", "double"],     
+      "indent": ["error", 2],            
+      "curly": "error",                 
+      "no-console": "off"               
     }
+  },
+  pluginJs.configs.recommended
 ];

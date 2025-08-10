@@ -17,5 +17,14 @@
   "devDependencies": {
     "eslint": "^9.32.0",
     "jest": "^30.0.5"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JairoBonilla2004/Lab_pruebas_u3.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/JairoBonilla2004/Lab_pruebas_u3/issues"
+  },
+  "homepage": "https://github.com/JairoBonilla2004/Lab_pruebas_u3#readme"
 }
